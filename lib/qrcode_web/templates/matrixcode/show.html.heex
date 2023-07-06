@@ -1,0 +1,34 @@
+<h1>Show Matrixcode</h1>
+
+<ul>
+
+  <li>
+    <strong>Type:</strong>
+    <%= @matrixcode.type %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @matrixcode.description %>
+  </li>
+
+  <li>
+    <strong>Code:</strong>
+    <%= @matrixcode.code %>
+  </li>
+
+  <li>
+    <strong>Status:</strong>
+    <%= @matrixcode.status %>
+  </li>
+
+  <li>
+  <strong>
+          <%= img_tag Qrcode.QrcodeImage.url({@matrixcode.picture, @matrixcode}, signed: true)%>
+
+  </strong>
+</li>
+</ul>
+
+<span><%= link "Edit", to: Routes.matrixcode_path(@conn, :edit, @matrixcode) %></span> |
+<span><%= link "Back", to: Routes.matrixcode_path(@conn, :index) %></span>
